@@ -1,0 +1,144 @@
+<svg width="680" viewBox="0 0 680 1060" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>PromptOpt Backend Flowchart v2</title>
+  <desc>Backend pipeline: User input flows through Job Initializer and Variant Generator, splits into dataset-guided and datasetless paths, merges at Score Collector, checks convergence, then ranks and exports the best prompt.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="1060" fill="#F4F6F9"/>
+
+  <!-- ── LAYER 0: User Input ── -->
+  <rect x="240" y="30" width="200" height="52" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="52" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#2C2C2A">User input</text>
+  <text x="340" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Base prompt + optional dataset</text>
+
+  <!-- arrow down -->
+  <line x1="340" y1="82" x2="340" y2="112" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── LAYER 1: Job Initializer ── -->
+  <rect x="215" y="112" width="250" height="52" rx="8" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+  <text x="340" y="134" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#3C3489">Job initializer</text>
+  <text x="340" y="152" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#534AB7">Validates config, creates run ID</text>
+
+  <!-- arrow down -->
+  <line x1="340" y1="164" x2="340" y2="194" stroke="#7F77DD" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- ── LAYER 2: Variant Generator ── -->
+  <rect x="205" y="194" width="270" height="52" rx="8" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+  <text x="340" y="216" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#3C3489">Variant generator</text>
+  <text x="340" y="234" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#534AB7">LLM produces N prompt candidates</text>
+
+  <!-- Fork left to dataset path -->
+  <path d="M290 246 L290 286 L175 286 L175 316" fill="none" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+  <!-- Fork right to criteria path -->
+  <path d="M390 246 L390 286 L505 286 L505 316" fill="none" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Mode labels -->
+  <text x="175" y="306" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#5F5E5A">with dataset</text>
+  <text x="505" y="306" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#5F5E5A">no dataset</text>
+
+  <!-- ── LEFT PATH: Dataset Scorer ── -->
+  <rect x="68" y="316" width="214" height="52" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+  <text x="175" y="338" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#085041">Dataset scorer</text>
+  <text x="175" y="356" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#0F6E56">Run variants on labeled examples</text>
+
+  <line x1="175" y1="368" x2="175" y2="408" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+
+  <!-- LEFT: Evaluator -->
+  <rect x="68" y="408" width="214" height="52" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+  <text x="175" y="430" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#085041">Evaluator</text>
+  <text x="175" y="448" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#0F6E56">Accuracy or LLM-as-judge</text>
+
+  <!-- ── RIGHT PATH: Criteria Scorer ── -->
+  <rect x="398" y="316" width="214" height="52" rx="8" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+  <text x="505" y="338" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#0C447C">Criteria scorer</text>
+  <text x="505" y="356" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#185FA5">Check variant vs. user rules</text>
+
+  <line x1="505" y1="368" x2="505" y2="408" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- RIGHT: LLM Judge -->
+  <rect x="398" y="408" width="214" height="52" rx="8" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+  <text x="505" y="430" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#0C447C">LLM judge</text>
+  <text x="505" y="448" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#185FA5">Rates output against each rule</text>
+
+  <!-- Converge both paths to Score Collector -->
+  <path d="M175 460 L175 530 L280 530" fill="none" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+  <path d="M505 460 L505 530 L400 530" fill="none" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- ── Score Collector ── -->
+  <rect x="215" y="506" width="250" height="52" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+  <text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#085041">Score collector</text>
+  <text x="340" y="546" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#0F6E56">Normalises scores across modes</text>
+
+  <line x1="340" y1="558" x2="340" y2="594" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── Convergence Diamond ── -->
+  <polygon points="340,594 430,638 340,682 250,638" fill="white" stroke="#888780" stroke-width="1"/>
+  <text x="340" y="632" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#2C2C2A">Converged?</text>
+  <text x="340" y="650" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Threshold or max rounds</text>
+
+  <!-- NO — loop back (dashed) -->
+  <path d="M250 638 L100 638 L100 220 L205 220" fill="none" stroke="#888780" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <text x="58" y="426" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">No —</text>
+  <text x="58" y="442" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">iterate</text>
+
+  <!-- YES arrow down -->
+  <line x1="340" y1="682" x2="340" y2="718" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="390" y="702" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Yes</text>
+
+  <!-- ── Ranker ── -->
+  <rect x="215" y="718" width="250" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+  <text x="340" y="740" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#633806">Ranker</text>
+  <text x="340" y="758" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#854F0B">Sort by score, tokens, latency</text>
+
+  <line x1="340" y1="770" x2="340" y2="806" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arrow-amber)"/>
+
+  <!-- ── Best Prompt Store ── -->
+  <rect x="215" y="806" width="250" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+  <text x="340" y="828" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#633806">Best prompt store</text>
+  <text x="340" y="846" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#854F0B">Persists top-ranked result</text>
+
+  <line x1="340" y1="858" x2="340" y2="894" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── Export API ── -->
+  <rect x="215" y="894" width="250" height="52" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="916" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#2C2C2A">Export API</text>
+  <text x="340" y="934" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">JSON, plain text, version history</text>
+
+  <line x1="340" y1="946" x2="340" y2="982" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ── Client / UI ── -->
+  <rect x="265" y="982" width="150" height="44" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="1004" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="14" font-weight="600" fill="#2C2C2A">Client / UI</text>
+
+  <!-- ── LEGEND ── -->
+  <rect x="40" y="912" width="10" height="10" rx="2" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+  <text x="56" y="921" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Generation</text>
+  <rect x="40" y="930" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+  <text x="56" y="939" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Scoring</text>
+  <rect x="40" y="948" width="10" height="10" rx="2" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+  <text x="56" y="957" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Datasetless</text>
+  <rect x="40" y="966" width="10" height="10" rx="2" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+  <text x="56" y="975" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">Selection</text>
+  <rect x="40" y="984" width="10" height="10" rx="2" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+  <text x="56" y="993" font-family="DM Sans, sans-serif" font-size="11" fill="#5F5E5A">I/O</text>
+
+  <!-- Title -->
+  <text x="340" y="18" text-anchor="middle" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#888780">PromptOpt — Backend Pipeline v2</text>
+</svg>
