@@ -1,0 +1,5 @@
+## STRATEGIES & INSIGHTS
+[str-00002] helpful=1 harmful=0 :: Specific reusable heuristic referencing the need to check if a table exists before attempting to query it.
+
+
+[str-00001] helpful=0 harmful=1 :: Test baseline bullet

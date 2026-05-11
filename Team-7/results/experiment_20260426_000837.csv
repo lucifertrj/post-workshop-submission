@@ -1,0 +1,5 @@
+iteration,ex_accuracy,playbook_entries,playbook_enabled
+5,0.4,0,False
+10,0.4,0,False
+5,0.4,1,True
+10,0.4,1,True
