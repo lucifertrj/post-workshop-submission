@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+backend/.venv/
+.python-version
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Verification outputs (regeneratable via `python verify.py`)
+backend/_verify_outputs/
+
+# Uploads (transient demo state)
+backend/_uploads/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
