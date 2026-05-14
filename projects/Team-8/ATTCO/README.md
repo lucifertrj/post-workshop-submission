@@ -1,4 +1,4 @@
-﻿<h1 align="center">ATTCO</h1>
+<h1 align="center">ATTCO</h1>
 <h3 align="center">Adaptive Test-Time Compute Optimization for ReAct-Based LLM Agents</h3>
 
 <p align="center">
@@ -87,19 +87,19 @@ ATTCO introduces a **multi-layer adaptive optimization stack** between the LLM a
 ATTCO's orchestration follows a **10-node LangGraph state machine** with adaptive conditional routing:
 
 ```
-Entry ΓåÆ Difficulty ΓåÆ Allocator ΓåÆ Calibrator ΓåÆ Reason ΓöÇΓöÇΓöÉ
-                                                        Γöé
-    ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
-    Γöé
-    Γû╝
-Arbitrator ΓöÇΓöÇ(continue)ΓöÇΓöÇΓåÆ Act ΓåÆ Observe ΓåÆ Arbitrator_Post
-    Γöé                                           Γöé
-    Γöé(truncate/stop)                (continue)  Γöé(terminate)
-    Γöé                                           Γöé
-    Γû╝                                           Γû╝
-Terminate ΓùäΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Compressor ΓùäΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Verifier
-                             Γöé
-                             ΓööΓöÇΓöÇΓåÆ Reason  (next loop)
+Entry -> Difficulty -> Allocator -> Calibrator -> Reason ----+
+                                                             |
+    +--------------------------------------------------------+
+    |
+    v
+Arbitrator --(continue)--> Act -> Observe -> Arbitrator_Post
+    |                                               |
+    |(truncate/stop)                  (continue)    |(terminate)
+    |                                               |
+    v                                               v
+Terminate <---------- Compressor <-------------- Verifier
+                           |
+                           +--> Reason  (next loop)
 ```
 
 **Node responsibilities:**
@@ -193,20 +193,23 @@ Pre-configured optimization profiles (`research`, `balanced`, `aggressive`, `vis
 ### Pareto Frontier: Accuracy vs Compute Cost
 
 ```
-Accuracy
-  80% ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ ΓùÅ ΓöÇΓöÇΓöÇΓöÇΓöÇ ΓùÅ  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-                  Balanced   Depth+Conf
-  79% ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ ΓùÅ ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-                                 Depth-only
-  78% ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ ΓùÅ ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-                                        Baseline
-  77% ΓöÇΓöÇ ΓùÅ ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-       Aggressive
-         Γöé
-  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-        800   1200   1600   2000   2400
-                  Avg Tokens / Query
+Accuracy (%)
+  79.2 |                    * Depth+Conf
+       |          * Balanced
+  79.1 |              
+       |
+  78.9 |                         * Depth-only
+       |
+  78.4 |                                    * Baseline
+       |
+  76.8 | * Aggressive
+       |
+       +------+--------+--------+--------+--------+---
+             800     1200     1600     2000     2400
+                        Avg Tokens / Query
 ```
+
+> **Reading the frontier:** Points toward the top-left corner are Pareto-optimal — higher accuracy at lower compute cost. The `balanced` profile sits at the optimal frontier, achieving the best accuracy-to-cost ratio.
 
 ### Observability Dashboards
 
