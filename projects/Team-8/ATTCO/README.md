@@ -24,37 +24,37 @@
 ---
 
 <p align="center">
-  <strong>Srijan C. Vachadmath</strong> &nbsp;┬╖&nbsp; <code>1BM23CD060</code> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>Manohara Salmani</strong> &nbsp;┬╖&nbsp; <code>1BM23CD035</code>
+  <strong>Srijan C. Vachadmath</strong> &nbsp;&middot;&nbsp; <code>1BM23CD060</code> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Manohara Salmani</strong> &nbsp;&middot;&nbsp; <code>1BM23CD035</code>
 </p>
 
-<p align="center"><em>Department of Computer Science ┬╖ BMS College of Engineering</em></p>
+<p align="center"><em>Department of Computer Science &middot; BMS College of Engineering</em></p>
 
 ---
 
 ## Overview
 
-**ATTCO** is an adaptive inference orchestration platform that optimizes test-time compute allocation for ReAct-based LLM agents. Instead of executing fixed-depth reasoning chains, ATTCO dynamically governs _how much_ an agent reasons, _which_ tools it invokes, and _when_ it terminates ΓÇö all in real time, guided by a multi-optimizer arbitration engine.
+**ATTCO** is an adaptive inference orchestration platform that optimizes test-time compute allocation for ReAct-based LLM agents. Instead of executing fixed-depth reasoning chains, ATTCO dynamically governs _how much_ an agent reasons, _which_ tools it invokes, and _when_ it terminates — all in real time, guided by a multi-optimizer arbitration engine.
 
-> _"Not all queries deserve the same inference budget. Adaptive governance at test-time can reduce compute by 40ΓÇô60% while preserving ΓÇö or improving ΓÇö answer quality."_
+> _"Not all queries deserve the same inference budget. Adaptive governance at test-time can reduce compute by 40–60% while preserving — or improving — answer quality."_
 
 ---
 
 ## Problem Statement
 
-The rapid adoption of LLM agents in production systems has exposed a fundamental architectural gap: **modern ReAct agents are computationally oblivious.** They apply identical reasoning budgets to every query ΓÇö a design choice inherited from static chain-of-thought research that does not survive contact with real-world inference economics.
+The rapid adoption of LLM agents in production systems has exposed a fundamental architectural gap: **modern ReAct agents are computationally oblivious.** They apply identical reasoning budgets to every query — a design choice inherited from static chain-of-thought research that does not survive contact with real-world inference economics.
 
 This manifests as three interlocking failure modes:
 
 **1. Static Depth, Dynamic Complexity.** A factual lookup and a multi-hop research synthesis execute the same number of reasoning steps. The former wastes compute; the latter may still be truncated prematurely. No existing ReAct framework adapts depth to the difficulty signal of the query at hand.
 
-**2. Reflexive Tool Invocation.** Agents invoke retrieval and computation tools not because the reasoning trajectory demands it, but because the prompt template encourages it. This inflates latency, increases API cost, and introduces noise into the observation stream ΓÇö all without improving answer quality.
+**2. Reflexive Tool Invocation.** Agents invoke retrieval and computation tools not because the reasoning trajectory demands it, but because the prompt template encourages it. This inflates latency, increases API cost, and introduces noise into the observation stream — all without improving answer quality.
 
 **3. Absence of Inference Governance.** There is no subsystem in standard ReAct pipelines that monitors reasoning quality, detects redundancy, suppresses oscillation, or halts execution at the point of diminishing returns. Hallucinations propagate unchecked. Loops run until a hard depth ceiling is hit. Correctness is sacrificed at the altar of throughput.
 
 The cumulative effect: **production LLM agent deployments scale inference cost linearly with query volume, with no mechanism to distinguish compute that contributes to correctness from compute that is simply burned.**
 
-ATTCO treats this as a unified orchestration problem ΓÇö one that demands a governance layer capable of dynamically allocating, monitoring, redirecting, and terminating inference in real time.
+ATTCO treats this as a unified orchestration problem — one that demands a governance layer capable of dynamically allocating, monitoring, redirecting, and terminating inference in real time.
 
 ---
 
@@ -133,31 +133,31 @@ When multiple optimizers issue conflicting proposals, the Arbitration Engine sel
 <tr>
 <td width="50%">
 
-### ≡ƒºá Dynamic Compute Allocation
-Pre-execution difficulty prediction classifies queries and allocates proportional compute budgets ΓÇö simple queries get lean budgets, complex queries get deep reasoning chains.
+### 🧠 Dynamic Compute Allocation
+Pre-execution difficulty prediction classifies queries and allocates proportional compute budgets — simple queries get lean budgets, complex queries get deep reasoning chains.
 
-### ≡ƒÄ» Confidence-Based Early Stopping
+### 🎯 Confidence-Based Early Stopping
 Monitors reasoning redundancy and answer stability in real-time, halting execution the moment marginal reasoning value drops below threshold.
 
-### ≡ƒ¢í∩╕Å Arbitration Engine
+### 🛡️ Arbitration Engine
 Central conflict-resolution brain that collects proposals from all optimizers and produces a unified governance decision using priority-weighted arbitration.
 
-### ≡ƒöì Selective Verification
+### 🔍 Selective Verification
 Risk-aware self-validation that triggers correctness checks only when reasoning volatility or inconsistency signals exceed safety thresholds.
 
 </td>
 <td width="50%">
 
-### ≡ƒöº Tool Invocation Governance
-Evaluates tool necessity before execution ΓÇö suppressing low-utility calls, preventing redundant searches, and reducing API overhead.
+### 🔧 Tool Invocation Governance
+Evaluates tool necessity before execution — suppressing low-utility calls, preventing redundant searches, and reducing API overhead.
 
-### ≡ƒù£∩╕Å Trace Compression
+### 🗜️ Trace Compression
 Adaptive context window optimization that summarizes or drops low-value reasoning steps, preserving critical context while reducing prompt overhead.
 
-### ≡ƒôè Self-Calibration Loop
+### 📊 Self-Calibration Loop
 Post-execution calibration that feeds telemetry back into optimizer thresholds, enabling the system to improve governance accuracy over time.
 
-### ΓÜí Runtime Profiles
+### ⚡ Runtime Profiles
 Pre-configured optimization profiles (`research`, `balanced`, `aggressive`, `visualization`) that tune all optimizer thresholds simultaneously.
 
 </td>
@@ -170,15 +170,15 @@ Pre-configured optimization profiles (`research`, `balanced`, `aggressive`, `vis
 
 ### Baseline vs ATTCO Performance
 
-| Metric | Standard ReAct | ATTCO (Balanced) | ATTCO (Aggressive) | ╬ö Reduction |
+| Metric | Standard ReAct | ATTCO (Balanced) | ATTCO (Aggressive) | Delta Reduction |
 |---|---|---|---|---|
-| **Avg. Tokens / Query** | ~2,400 | ~1,450 | ~980 | **40ΓÇô59%** |
-| **Avg. Latency** | ~12.3s | ~7.8s | ~5.1s | **37ΓÇô58%** |
-| **Avg. Reasoning Depth** | 8.2 steps | 4.6 steps | 3.1 steps | **44ΓÇô62%** |
-| **Tool Calls / Query** | 3.4 | 2.1 | 1.5 | **38ΓÇô56%** |
-| **Answer Accuracy** | 78.4% | 79.1% | 76.8% | **+0.7% / ΓêÆ1.6%** |
+| **Avg. Tokens / Query** | ~2,400 | ~1,450 | ~980 | **40–59%** |
+| **Avg. Latency** | ~12.3s | ~7.8s | ~5.1s | **37–58%** |
+| **Avg. Reasoning Depth** | 8.2 steps | 4.6 steps | 3.1 steps | **44–62%** |
+| **Tool Calls / Query** | 3.4 | 2.1 | 1.5 | **38–56%** |
+| **Answer Accuracy** | 78.4% | 79.1% | 76.8% | **+0.7% / -1.6%** |
 
-> **Key Finding:** The `balanced` profile achieves **40% compute reduction with no accuracy loss**. The `aggressive` profile trades 1.6% accuracy for nearly 60% compute savings ΓÇö a favorable tradeoff for cost-sensitive deployments.
+> **Key Finding:** The `balanced` profile achieves **40% compute reduction with no accuracy loss**. The `aggressive` profile trades 1.6% accuracy for nearly 60% compute savings — a favorable tradeoff for cost-sensitive deployments.
 
 ### Optimizer Attribution
 
@@ -188,7 +188,7 @@ Pre-configured optimization profiles (`research`, `balanced`, `aggressive`, `vis
 | Confidence Early Stopping | 28% | 67% |
 | Tool Governance | 19% | 54% |
 | Trace Compression | 12% | 41% |
-| Verification (net overhead) | ΓêÆ6% | 23% |
+| Verification (net overhead) | -6% | 23% |
 
 ### Pareto Frontier: Accuracy vs Compute Cost
 
@@ -196,7 +196,7 @@ Pre-configured optimization profiles (`research`, `balanced`, `aggressive`, `vis
 Accuracy (%)
   79.2 |                    * Depth+Conf
        |          * Balanced
-  79.1 |              
+  79.1 |
        |
   78.9 |                         * Depth-only
        |
@@ -209,23 +209,23 @@ Accuracy (%)
                         Avg Tokens / Query
 ```
 
-> **Reading the frontier:** Points toward the top-left corner are Pareto-optimal — higher accuracy at lower compute cost. The `balanced` profile sits at the optimal frontier, achieving the best accuracy-to-cost ratio.
+> **Reading the frontier:** Points toward the top-left are Pareto-optimal — higher accuracy at lower compute cost. The `balanced` profile sits at the optimal frontier, achieving the best accuracy-to-cost ratio.
 
 ### Observability Dashboards
 
-### ≡ƒôè ATTCO Research Console ΓÇö Orchestration Trace
+### 📊 ATTCO Research Console — Orchestration Trace
 
 The Streamlit Research Console provides full-fidelity visualization of every reasoning step, optimizer intervention, tool invocation, and verification outcome in real time.
 
 <img src="docs/screenshots/dashboard_trace.png" alt="ATTCO Dashboard Trace" width="900"/>
 
-### ≡ƒôê W&B Experiment Tracking
+### 📈 W&B Experiment Tracking
 
 Weights & Biases integration captures per-query telemetry including token consumption, latency, optimizer activations, and arbitration decisions across experimental profiles.
 
 <img src="docs/screenshots/wandb_experiments.png" alt="W&B Experiment Tracking" width="900"/>
 
-### ≡ƒöì LangSmith Execution Traces
+### 🔍 LangSmith Execution Traces
 
 LangSmith provides node-level execution traces showing the full LangGraph lifecycle, including arbitration decision points, tool suppression events, and verification triggers.
 
@@ -290,59 +290,59 @@ By compressing low-value early reasoning steps, ATTCO maintains a lean context w
 
 ```
 attco/
-Γö£ΓöÇΓöÇ controller/              # LangGraph orchestration runtime
-Γöé   Γö£ΓöÇΓöÇ graph.py             # 10-node state machine definition
-Γöé   Γö£ΓöÇΓöÇ state.py             # AgentState schema (Pydantic v2)
-Γöé   Γö£ΓöÇΓöÇ utils.py             # Canonical state mutation utilities
-Γöé   ΓööΓöÇΓöÇ nodes/               # Individual graph node implementations
-Γöé       Γö£ΓöÇΓöÇ reason.py         # LLM reasoning node
-Γöé       Γö£ΓöÇΓöÇ act.py            # Tool execution node
-Γöé       Γö£ΓöÇΓöÇ observe.py        # Observation aggregation
-Γöé       Γö£ΓöÇΓöÇ arbitrator.py     # Central arbitration coordinator
-Γöé       Γö£ΓöÇΓöÇ verifier.py       # Selective correctness verification
-Γöé       Γö£ΓöÇΓöÇ compressor.py     # Trace compression optimizer
-Γöé       Γö£ΓöÇΓöÇ difficulty.py     # Query difficulty prediction
-Γöé       Γö£ΓöÇΓöÇ allocator.py      # Compute budget allocation
-Γöé       Γö£ΓöÇΓöÇ calibrator.py     # Self-calibration loop
-Γöé       ΓööΓöÇΓöÇ terminate.py      # Final synthesis & persistence
-Γöé
-Γö£ΓöÇΓöÇ optimizer/               # Adaptive optimization modules
-Γöé   ΓööΓöÇΓöÇ modules/
-Γöé       Γö£ΓöÇΓöÇ arbitrator/       # Conflict resolution engine
-Γöé       Γö£ΓöÇΓöÇ confidence/       # Early stopping policy
-Γöé       Γö£ΓöÇΓöÇ compressor/       # Context window optimization
-Γöé       Γö£ΓöÇΓöÇ verifier/         # Risk-aware verification
-Γöé       Γö£ΓöÇΓöÇ tool_governance/  # Tool necessity estimation
-Γöé       Γö£ΓöÇΓöÇ calibrator/       # Threshold self-tuning
-Γöé       Γö£ΓöÇΓöÇ depth_controller.py
-Γöé       ΓööΓöÇΓöÇ token_budget.py
-Γöé
-Γö£ΓöÇΓöÇ intelligence/            # Pre-execution intelligence
-Γöé   Γö£ΓöÇΓöÇ difficulty/           # Difficulty classification
-Γöé   ΓööΓöÇΓöÇ allocator/            # Budget allocation strategies
-Γöé
-Γö£ΓöÇΓöÇ llm/                     # LiteLLM abstraction layer
-Γö£ΓöÇΓöÇ tracing/                 # Telemetry infrastructure
-Γöé   Γö£ΓöÇΓöÇ schema.py             # Structured event schema
-Γöé   Γö£ΓöÇΓöÇ tracer.py             # Global trace emitter
-Γöé   ΓööΓöÇΓöÇ backends/             # LangSmith, W&B, Local
-Γöé
-Γö£ΓöÇΓöÇ baseline/                # Standard ReAct agent (control)
-Γö£ΓöÇΓöÇ benchmarks/              # Evaluation harness
-Γöé   Γö£ΓöÇΓöÇ runner.py             # Multi-profile benchmark engine
-Γöé   Γö£ΓöÇΓöÇ harness.py            # Dataset loading & evaluation
-Γöé   ΓööΓöÇΓöÇ suites/               # HotpotQA, TriviaQA, etc.
-Γöé
-Γö£ΓöÇΓöÇ dashboard/               # Streamlit Research Console
-Γöé   Γö£ΓöÇΓöÇ app.py                # Main orchestration dashboard
-Γöé   ΓööΓöÇΓöÇ pages/                # Research analytics pages
-Γöé
-Γö£ΓöÇΓöÇ infrastructure/          # Configuration & deployment
-Γöé   ΓööΓöÇΓöÇ config/               # Runtime profiles, loaders
-Γöé
-Γö£ΓöÇΓöÇ experiments/             # Ablation study configurations
-Γö£ΓöÇΓöÇ research/                # Research analysis scripts
-ΓööΓöÇΓöÇ visualization/           # Plotting & analytics
+├── controller/              # LangGraph orchestration runtime
+│   ├── graph.py             # 10-node state machine definition
+│   ├── state.py             # AgentState schema (Pydantic v2)
+│   ├── utils.py             # Canonical state mutation utilities
+│   └── nodes/               # Individual graph node implementations
+│       ├── reason.py         # LLM reasoning node
+│       ├── act.py            # Tool execution node
+│       ├── observe.py        # Observation aggregation
+│       ├── arbitrator.py     # Central arbitration coordinator
+│       ├── verifier.py       # Selective correctness verification
+│       ├── compressor.py     # Trace compression optimizer
+│       ├── difficulty.py     # Query difficulty prediction
+│       ├── allocator.py      # Compute budget allocation
+│       ├── calibrator.py     # Self-calibration loop
+│       └── terminate.py      # Final synthesis & persistence
+│
+├── optimizer/               # Adaptive optimization modules
+│   └── modules/
+│       ├── arbitrator/       # Conflict resolution engine
+│       ├── confidence/       # Early stopping policy
+│       ├── compressor/       # Context window optimization
+│       ├── verifier/         # Risk-aware verification
+│       ├── tool_governance/  # Tool necessity estimation
+│       ├── calibrator/       # Threshold self-tuning
+│       ├── depth_controller.py
+│       └── token_budget.py
+│
+├── intelligence/            # Pre-execution intelligence
+│   ├── difficulty/           # Difficulty classification
+│   └── allocator/            # Budget allocation strategies
+│
+├── llm/                     # LiteLLM abstraction layer
+├── tracing/                 # Telemetry infrastructure
+│   ├── schema.py             # Structured event schema
+│   ├── tracer.py             # Global trace emitter
+│   └── backends/             # LangSmith, W&B, Local
+│
+├── baseline/                # Standard ReAct agent (control)
+├── benchmarks/              # Evaluation harness
+│   ├── runner.py             # Multi-profile benchmark engine
+│   ├── harness.py            # Dataset loading & evaluation
+│   └── suites/               # HotpotQA, TriviaQA, etc.
+│
+├── dashboard/               # Streamlit Research Console
+│   ├── app.py                # Main orchestration dashboard
+│   └── pages/                # Research analytics pages
+│
+├── infrastructure/          # Configuration & deployment
+│   └── config/               # Runtime profiles, loaders
+│
+├── experiments/             # Ablation study configurations
+├── research/                # Research analysis scripts
+└── visualization/           # Plotting & analytics
 ```
 
 ### Technology Stack
@@ -387,7 +387,7 @@ pip install -e ".[dashboard,dev]"
 
 # Configure environment
 cp .env.example .env
-# Edit .env ΓÇö set OPENAI_API_KEY, LANGSMITH_API_KEY, WANDB_API_KEY
+# Edit .env — set OPENAI_API_KEY, LANGSMITH_API_KEY, WANDB_API_KEY
 ```
 
 ### Launch the Research Console
@@ -419,11 +419,11 @@ python -m scripts.run_experiment --profiles baseline,balanced,aggressive
 
 ## Future Scope
 
-- **Learned Arbitration** ΓÇö Replace priority-based arbitration with a trained policy network that learns optimal governance strategies from telemetry
-- **RL-Based Compute Allocation** ΓÇö Train a reinforcement learning allocator that dynamically adjusts budgets based on real-time reasoning signals
-- **Multi-Agent Orchestration** ΓÇö Extend ATTCO's governance to coordinate compute across multiple cooperating agents
-- **Dynamic Verifier Ensembles** ΓÇö Deploy multiple verification strategies and dynamically select the most appropriate per query
-- **Semantic Compression** ΓÇö Replace heuristic compression with embedding-based trace summarization for higher-fidelity context reduction
+- **Learned Arbitration** — Replace priority-based arbitration with a trained policy network that learns optimal governance strategies from telemetry
+- **RL-Based Compute Allocation** — Train a reinforcement learning allocator that dynamically adjusts budgets based on real-time reasoning signals
+- **Multi-Agent Orchestration** — Extend ATTCO's governance to coordinate compute across multiple cooperating agents
+- **Dynamic Verifier Ensembles** — Deploy multiple verification strategies and dynamically select the most appropriate per query
+- **Semantic Compression** — Replace heuristic compression with embedding-based trace summarization for higher-fidelity context reduction
 
 ---
 
@@ -442,16 +442,16 @@ mypy .          # type check
 
 ## License
 
-This project is licensed under the **MIT License** ΓÇö see [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
 
 ---
 
 ## Acknowledgements
 
-Built with [LangGraph](https://github.com/langchain-ai/langgraph) ┬╖ [LiteLLM](https://github.com/BerriAI/litellm) ┬╖ [LangSmith](https://smith.langchain.com/) ┬╖ [Weights & Biases](https://wandb.ai/) ┬╖ [Streamlit](https://streamlit.io/) ┬╖ [DuckDB](https://duckdb.org/) ┬╖ [Pydantic](https://docs.pydantic.dev/)
+Built with [LangGraph](https://github.com/langchain-ai/langgraph) &middot; [LiteLLM](https://github.com/BerriAI/litellm) &middot; [LangSmith](https://smith.langchain.com/) &middot; [Weights & Biases](https://wandb.ai/) &middot; [Streamlit](https://streamlit.io/) &middot; [DuckDB](https://duckdb.org/) &middot; [Pydantic](https://docs.pydantic.dev/)
 
 ---
 
 <p align="center">
-  <sub>ATTCO ΓÇö Adaptive Test-Time Compute Optimization &nbsp;┬╖&nbsp; BMS College of Engineering &nbsp;┬╖&nbsp; 2025</sub>
+  <sub>ATTCO — Adaptive Test-Time Compute Optimization &nbsp;&middot;&nbsp; BMS College of Engineering &nbsp;&middot;&nbsp; 2025</sub>
 </p>
