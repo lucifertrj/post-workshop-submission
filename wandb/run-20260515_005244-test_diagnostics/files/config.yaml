@@ -1,0 +1,54 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            r9ib4brdhzl3vsryha6u7rhvcuiajlca:
+                codePath: test_inference.py
+                codePathLocal: test_inference.py
+                cpu_count: 24
+                cpu_count_logical: 32
+                cudaVersion: "13.1"
+                disk:
+                    /:
+                        total: "537126760448"
+                        used: "96652861440"
+                email: manoharasalmani.cd23@bmsce.ac.in
+                executable: C:\Users\manoh\anaconda3\python.exe
+                gpu: NVIDIA GeForce RTX 4060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 3072
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4060 Laptop GPU
+                      uuid: GPU-00b12154-d0ec-96a5-e189-265a68442ccd
+                host: MANU
+                memory:
+                    total: "34086969344"
+                os: Windows-11-10.0.26200-SP0
+                program: D:\BMS COLL\SEM-6\OT-DS\ReACT\test_inference.py
+                python: CPython 3.12.7
+                root: D:\BMS COLL\SEM-6\OT-DS\ReACT
+                startedAt: "2026-05-14T19:22:44.844627Z"
+                writerId: r9ib4brdhzl3vsryha6u7rhvcuiajlca
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 86
+                - 95
+                - 105
+            "2":
+                - 86
+                - 95
+                - 105
+            "3":
+                - 14
+            "4": 3.12.7
+            "5": 0.26.1
+            "8":
+                - 3
+            "10":
+                - 20
+            "12": 0.26.1
+            "13": windows-amd64

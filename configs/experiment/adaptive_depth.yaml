@@ -1,0 +1,6 @@
+# Adaptive depth control experiment
+name: adaptive_depth
+description: ReAct agent with depth controller optimizer
+optimizer: depth_controller
+max_steps: 15
+random_seed: 42

@@ -1,0 +1,186 @@
+[34m[1mwandb[0m: Detected [langchain, litellm, openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Weave is installed but not imported. Add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1mwandb_initialized             [0m [36mentity[0m=[35msiddharthamdal-is23-bmsce[0m [36mproject[0m=[35mATTCO[0m [36mrun_id[0m=[35mattco_console_run[0m
+[2m2026-05-15 00:55:35[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m438[0m [36mtotal_tokens[0m=[35m532[0m
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m5[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:55:35[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:55:35[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m7[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:55:37[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m536[0m [36mtotal_tokens[0m=[35m630[0m
+[2m2026-05-15 00:55:37[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m6[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:37[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:55:37[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:55:37[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:55:37[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:55:37[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m8[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:55:38[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m634[0m [36mtotal_tokens[0m=[35m728[0m
+[2m2026-05-15 00:55:38[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m7[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:38[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:55:38[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:55:38[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:55:38[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:55:38[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m9[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[92m00:55:39 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[92m00:55:39 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[92m00:55:39 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[2m2026-05-15 00:55:40[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m732[0m [36mtotal_tokens[0m=[35m826[0m
+[2m2026-05-15 00:55:40[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m8[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:40[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:55:40[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:55:40[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:55:40[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:55:40[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m10[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:55:42[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m830[0m [36mtotal_tokens[0m=[35m924[0m
+[2m2026-05-15 00:55:42[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m9[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:42[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:55:42[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:55:42[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:55:42[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:55:42[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m11[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:55:44[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m94[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m928[0m [36mtotal_tokens[0m=[35m1022[0m
+[2m2026-05-15 00:55:44[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m10[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:55:44[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m10[0m
+[2m2026-05-15 00:55:44[0m [[33m[1mwarning  [0m] [1mmax_steps_reached             [0m [36mcurrent[0m=[35m10[0m [36mlimit[0m=[35m10[0m
+[2m2026-05-15 00:55:44[0m [[32m[1minfo     [0m] [1mperforming_final_synthesis    [0m [36mrun_id[0m=[35mUUID('931f6d29-4972-4d13-910a-0eee61fd10f0')[0m
+[2m2026-05-15 00:55:44[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m1[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[92m00:55:44 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[92m00:55:44 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[92m00:55:44 - LiteLLM:WARNING[0m: langsmith.py:481 - Langsmith Logging - credentials missing - api_key: None, project: litellm-completion
+[2m2026-05-15 00:55:45[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m72[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m1085[0m [36mtotal_tokens[0m=[35m1157[0m
+[2m2026-05-15 00:55:45[0m [[32m[1minfo     [0m] [1msynthesis_completed           [0m [36mlength[0m=[35m365[0m
+[2m2026-05-15 00:56:04[0m [[32m[1minfo     [0m] [1menvironment_loaded            [0m [36mpath[0m=[35m.env[0m
+[2m2026-05-15 00:56:04[0m [[32m[1minfo     [0m] [1mruntime_profile_activated     [0m [36mdescription[0m=[35m'Scientifically valid conservative optimization for benchmarks and papers.'[0m [36mprofile[0m=[35mresearch[0m
+[2m2026-05-15 00:56:04[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m0[0m
+[2m2026-05-15 00:56:04[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m2[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:56:07[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m107[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m46[0m [36mtotal_tokens[0m=[35m153[0m
+[2m2026-05-15 00:56:07[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m1[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:56:07[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:56:07[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:56:07[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:56:07[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:56:07[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m3[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:56:08[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m107[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m157[0m [36mtotal_tokens[0m=[35m264[0m
+[2m2026-05-15 00:56:08[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m2[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:56:08[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:56:08[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:56:08[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:56:08[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:56:08[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m4[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:56:10[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m107[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m268[0m [36mtotal_tokens[0m=[35m375[0m
+[2m2026-05-15 00:56:10[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m3[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:56:10[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:56:10[0m [[32m[1minfo     [0m] [1mintervention_applied          [0m [36mrationale[0m=[35m'Winner selected by priority (OptimizerAction.TRUNCATE) and confidence (1.00). Reason: Depth ceiling (3) reached.'[0m [36mtype[0m=[35mTRUNCATE[0m
+[2m2026-05-15 00:56:10[0m [[32m[1minfo     [0m] [1mperforming_final_synthesis    [0m [36mrun_id[0m=[35mUUID('fca20d76-13ed-4392-934e-9e7003f2b6ac')[0m
+[2m2026-05-15 00:56:10[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m1[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:56:11[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m75[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m438[0m [36mtotal_tokens[0m=[35m513[0m
+[2m2026-05-15 00:56:11[0m [[32m[1minfo     [0m] [1msynthesis_completed           [0m [36mlength[0m=[35m390[0m
+Task was destroyed but it is pending!
+task: <Task pending name='Task-228' coro=<LoggingWorker._worker_loop() running at C:\Users\manoh\anaconda3\Lib\site-packages\litellm\litellm_core_utils\logging_worker.py:121> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[2m2026-05-15 00:57:55[0m [[32m[1minfo     [0m] [1menvironment_loaded            [0m [36mpath[0m=[35m.env[0m
+[2m2026-05-15 00:57:55[0m [[32m[1minfo     [0m] [1mruntime_profile_activated     [0m [36mdescription[0m=[35m'Scientifically valid conservative optimization for benchmarks and papers.'[0m [36mprofile[0m=[35mresearch[0m
+[2m2026-05-15 00:57:55[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m0[0m
+[2m2026-05-15 00:57:55[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m2[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:57:58[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m46[0m [36mtotal_tokens[0m=[35m143[0m
+[2m2026-05-15 00:57:58[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m1[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:57:58[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:57:58[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:57:58[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:57:58[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:57:58[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m3[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:57:59[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m147[0m [36mtotal_tokens[0m=[35m244[0m
+[2m2026-05-15 00:57:59[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m2[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:57:59[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:57:59[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:57:59[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:57:59[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:57:59[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m4[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:00[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m248[0m [36mtotal_tokens[0m=[35m345[0m
+[2m2026-05-15 00:58:00[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m3[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:01[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:58:01[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:58:01[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:58:01[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:58:01[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m5[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:02[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m349[0m [36mtotal_tokens[0m=[35m446[0m
+[2m2026-05-15 00:58:02[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m4[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:02[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m4[0m
+[2m2026-05-15 00:58:02[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m4[0m
+[2m2026-05-15 00:58:02[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m4[0m
+[2m2026-05-15 00:58:02[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m4[0m
+[2m2026-05-15 00:58:02[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m6[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:04[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m450[0m [36mtotal_tokens[0m=[35m547[0m
+[2m2026-05-15 00:58:04[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m5[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:04[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:58:04[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:58:04[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:58:04[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m5[0m
+[2m2026-05-15 00:58:04[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m7[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:05[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m551[0m [36mtotal_tokens[0m=[35m648[0m
+[2m2026-05-15 00:58:05[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m6[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:05[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:58:05[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:58:05[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:58:05[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m6[0m
+[2m2026-05-15 00:58:05[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m8[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:06[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m652[0m [36mtotal_tokens[0m=[35m749[0m
+[2m2026-05-15 00:58:06[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m7[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:06[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:58:06[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:58:06[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:58:06[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m7[0m
+[2m2026-05-15 00:58:06[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m9[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:08[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m753[0m [36mtotal_tokens[0m=[35m850[0m
+[2m2026-05-15 00:58:08[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m8[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:08[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:58:08[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:58:08[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:58:08[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m8[0m
+[2m2026-05-15 00:58:08[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m10[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:10[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m854[0m [36mtotal_tokens[0m=[35m951[0m
+[2m2026-05-15 00:58:10[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m9[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:10[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:58:10[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:58:10[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:58:10[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m9[0m
+[2m2026-05-15 00:58:10[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m11[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:11[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m97[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m955[0m [36mtotal_tokens[0m=[35m1052[0m
+[2m2026-05-15 00:58:11[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m10[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:11[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m10[0m
+[2m2026-05-15 00:58:11[0m [[33m[1mwarning  [0m] [1mmax_steps_reached             [0m [36mcurrent[0m=[35m10[0m [36mlimit[0m=[35m10[0m
+[2m2026-05-15 00:58:11[0m [[32m[1minfo     [0m] [1mperforming_final_synthesis    [0m [36mrun_id[0m=[35mUUID('112d5370-6899-42f8-96dc-6249ae9a9bf3')[0m
+[2m2026-05-15 00:58:11[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m1[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:14[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m75[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m1115[0m [36mtotal_tokens[0m=[35m1190[0m
+[2m2026-05-15 00:58:14[0m [[32m[1minfo     [0m] [1msynthesis_completed           [0m [36mlength[0m=[35m385[0m
+Task was destroyed but it is pending!
+task: <Task pending name='Task-905' coro=<LoggingWorker._worker_loop() running at C:\Users\manoh\anaconda3\Lib\site-packages\litellm\litellm_core_utils\logging_worker.py:121> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[2m2026-05-15 00:58:50[0m [[32m[1minfo     [0m] [1menvironment_loaded            [0m [36mpath[0m=[35m.env[0m
+[2m2026-05-15 00:58:50[0m [[32m[1minfo     [0m] [1mruntime_profile_activated     [0m [36mdescription[0m=[35m'Scientifically valid conservative optimization for benchmarks and papers.'[0m [36mprofile[0m=[35mresearch[0m
+[2m2026-05-15 00:58:51[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m0[0m
+[2m2026-05-15 00:58:51[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m2[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:53[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m113[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m46[0m [36mtotal_tokens[0m=[35m159[0m
+[2m2026-05-15 00:58:53[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m1[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:53[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:58:53[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:58:53[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:58:53[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m1[0m
+[2m2026-05-15 00:58:53[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m3[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:54[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m113[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m163[0m [36mtotal_tokens[0m=[35m276[0m
+[2m2026-05-15 00:58:54[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m2[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:54[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:58:54[0m [[32m[1minfo     [0m] [1mact_node_entry                [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:58:54[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:58:54[0m [[32m[1minfo     [0m] [1mreason_node_entry             [0m [36mstep[0m=[35m2[0m
+[2m2026-05-15 00:58:54[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m4[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:56[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m113[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m280[0m [36mtotal_tokens[0m=[35m393[0m
+[2m2026-05-15 00:58:56[0m [[32m[1minfo     [0m] [1mreason_node_exit              [0m [36mstep[0m=[35m3[0m [36mterminated[0m=[35mFalse[0m
+[2m2026-05-15 00:58:56[0m [[32m[1minfo     [0m] [1marbitrator_node_entry         [0m [36mstep[0m=[35m3[0m
+[2m2026-05-15 00:58:56[0m [[32m[1minfo     [0m] [1mintervention_applied          [0m [36mrationale[0m=[35m'Winner selected by priority (OptimizerAction.TRUNCATE) and confidence (1.00). Reason: Depth ceiling (3) reached.'[0m [36mtype[0m=[35mTRUNCATE[0m
+[2m2026-05-15 00:58:56[0m [[32m[1minfo     [0m] [1mperforming_final_synthesis    [0m [36mrun_id[0m=[35mUUID('581cb2a2-358a-4f49-b551-280a264a2982')[0m
+[2m2026-05-15 00:58:56[0m [[32m[1mdebug    [0m] [1mllm_call_started              [0m [36mmessage_count[0m=[35m1[0m [36mmodel[0m=[35mopenai/gpt-4o[0m
+[2m2026-05-15 00:58:57[0m [[32m[1mdebug    [0m] [1mllm_call_completed            [0m [36mcompletion_tokens[0m=[35m61[0m [36mmodel[0m=[35mopenai/gpt-4o[0m [36mprompt_tokens[0m=[35m456[0m [36mtotal_tokens[0m=[35m517[0m
+[2m2026-05-15 00:58:57[0m [[32m[1minfo     [0m] [1msynthesis_completed           [0m [36mlength[0m=[35m330[0m
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1241' coro=<LoggingWorker._worker_loop() running at C:\Users\manoh\anaconda3\Lib\site-packages\litellm\litellm_core_utils\logging_worker.py:121> wait_for=<Future pending cb=[Task.task_wakeup()]>>

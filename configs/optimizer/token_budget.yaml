@@ -1,0 +1,6 @@
+# Token budget optimizer
+type: token_budget
+max_tokens_per_query: 5000
+cost_threshold: 0.05
+aggressive: true
+_limit_fraction: 0.85

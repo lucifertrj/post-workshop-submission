@@ -1,0 +1,36 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.12.7",
+  "startedAt":  "2026-05-14T19:25:26.364297Z",
+  "program":  "D:\\BMS COLL\\SEM-6\\OT-DS\\ReACT\\dashboard\\app.py",
+  "codePath":  "dashboard\\app.py",
+  "codePathLocal":  "dashboard\\app.py",
+  "email":  "manoharasalmani.cd23@bmsce.ac.in",
+  "root":  "D:\\BMS COLL\\SEM-6\\OT-DS\\ReACT",
+  "host":  "MANU",
+  "executable":  "C:\\Users\\manoh\\anaconda3\\python.exe",
+  "cpu_count":  24,
+  "cpu_count_logical":  32,
+  "gpu":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "537126760448",
+      "used":  "96652926976"
+    }
+  },
+  "memory":  {
+    "total":  "34086969344"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal":  "8585740288",
+      "cudaCores":  3072,
+      "architecture":  "Ada",
+      "uuid":  "GPU-00b12154-d0ec-96a5-e189-265a68442ccd"
+    }
+  ],
+  "cudaVersion":  "13.1",
+  "writerId":  "13aseflw4j0wmfucz1dbfp9sbl3y0inv"
+}

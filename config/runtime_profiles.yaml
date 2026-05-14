@@ -1,0 +1,64 @@
+# ATTCO Runtime Profiles
+# Dynamically alters optimization thresholds, telemetry verbosity, and governance sensitivity.
+
+research:
+  description: "Scientifically valid conservative optimization for benchmarks and papers."
+  optimization:
+    stop_threshold: 0.92
+    verification_risk_trigger: 0.8
+    utility_threshold: 0.6
+    min_steps_to_compress: 5
+    max_reasoning_depth: 15
+    min_reasoning_before_truncation: 2
+    context_compression_ratio: 0.6
+  telemetry:
+    verbosity: "minimal"
+    emit_arbitration_events: true
+    emit_confidence_snapshots: false
+
+balanced:
+  description: "Production-like adaptive orchestration with moderate thresholds."
+  optimization:
+    stop_threshold: 0.85
+    verification_risk_trigger: 0.6
+    utility_threshold: 0.5
+    min_steps_to_compress: 3
+    max_reasoning_depth: 12
+    min_reasoning_before_truncation: 3
+    context_compression_ratio: 0.4
+  telemetry:
+    verbosity: "standard"
+    emit_arbitration_events: true
+    emit_confidence_snapshots: true
+
+aggressive:
+  description: "Efficiency-first orchestration maximizing token savings."
+  optimization:
+    stop_threshold: 0.70
+    verification_risk_trigger: 0.4
+    utility_threshold: 0.3
+    min_steps_to_compress: 2
+    max_reasoning_depth: 8
+    min_reasoning_before_truncation: 2
+    context_compression_ratio: 0.2
+  telemetry:
+    verbosity: "standard"
+    emit_arbitration_events: true
+    emit_confidence_snapshots: true
+
+visualization:
+  description: "Telemetry-rich showcase mode for dashboards and demos."
+  optimization:
+    stop_threshold: 0.60         # Trigger early stops more easily
+    verification_risk_trigger: 0.3 # Trigger verification more frequently
+    utility_threshold: 0.2         # Suppress tools more aggressively
+    min_steps_to_compress: 2
+    max_reasoning_depth: 10
+    min_reasoning_before_truncation: 4 # High visibility
+    context_compression_ratio: 0.1 # Aggressive compression for visibility
+  telemetry:
+    verbosity: "verbose"
+    emit_arbitration_events: true
+    emit_confidence_snapshots: true
+    emit_calibration_details: true
+    emit_step_usage: true
