@@ -1,6 +1,0 @@
-# Local file trace backend
-backend: local
-format: jsonl
-persistence: fs
-output_dir: artifacts/traces/
-log_level: INFO

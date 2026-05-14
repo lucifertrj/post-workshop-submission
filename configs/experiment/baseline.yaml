@@ -1,6 +1,0 @@
-# Baseline (static ReAct) experiment config
-name: baseline
-description: Static non-optimized ReAct agent
-optimizer: none
-max_steps: 10
-random_seed: 42
