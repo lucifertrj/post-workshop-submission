@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Registered custom properties so they can be animated by the scroll
+   timeline (Chromium) or by the JS scroll listener (Firefox/Safari
+   fallback in ScrollHue.tsx). */
+@property --hue-shift {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: true;
+}
+@property --grad-y {
+  syntax: '<percentage>';
+  initial-value: 65%;
+  inherits: true;
+}
+@property --grad-x {
+  syntax: '<percentage>';
+  initial-value: 82%;
+  inherits: true;
+}
+
+:root {
+  --hue-shift: 0deg;
+  --grad-y: 65%;   /* vertical radius of the gradient ellipse */
+  --grad-x: 82%;   /* horizontal radius of the gradient ellipse */
+
+  /* Static base palette */
+  --bg-deep:  #0a0a0c;                 /* near-black body / cards */
+  --bg-card:  #131319;                 /* slightly lifted card bg */
+  --cream:    oklch(0.96 0.02 80);
+  --muted:    oklch(0.78 0.03 80);     /* readable on bright gradient too */
+  --gold:     oklch(0.82 0.15 75);
+  --line:     rgba(244, 235, 225, 0.12);
+
+  /* Top-gradient stops — earth/jewel tones, all hue-shifted in unison.
+     Avoiding the lilac/purple/cyan band that's everywhere in vibe-coded UIs. */
+  --grad-1: oklch(0.52 0.18 calc(25deg  + var(--hue-shift)));   /* rust  */
+  --grad-2: oklch(0.60 0.17 calc(70deg  + var(--hue-shift)));   /* amber */
+  --grad-3: oklch(0.46 0.14 calc(155deg + var(--hue-shift)));   /* forest */
+  --grad-4: oklch(0.38 0.13 calc(220deg + var(--hue-shift)));   /* deep teal */
+}
+
+@theme inline {
+  --color-deep:  var(--bg-deep);
+  --color-card:  var(--bg-card);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-gold:  var(--gold);
+  --color-line:  var(--line);
+  --font-sans:   var(--font-inter), system-ui, sans-serif;
+  --font-mono:   var(--font-jb-mono), ui-monospace, monospace;
+}
+
+@keyframes scrollHueAnim {
+  from { --hue-shift:  0deg; --grad-y: 65%; --grad-x: 82%; }
+  to   { --hue-shift: 30deg; --grad-y: 88%; --grad-x: 96%; }
+}
+
+@supports (animation-timeline: scroll()) {
+  html {
+    animation: scrollHueAnim linear forwards;
+    animation-timeline: scroll(root);
+  }
+}
+
+html {
+  background: var(--bg-deep);
+  color: var(--cream);
+  min-height: 100vh;
+}
+
+body {
+  /* No background — let the fixed BackgroundLines (z-index -10) show through */
+  background: transparent;
+  color: var(--cream);
+  min-height: 100vh;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide the ugly default scrollbars on horizontally-scrolling code blocks.
+   Content remains scrollable via touchpad / shift+wheel / arrow keys. */
+pre, .scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+pre::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Slim, gold-thumbed range slider on dark bg */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 24px;
+  width: 100%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--line);
+  border-radius: 1px;
+}
+input[type='range']::-moz-range-track {
+  height: 2px;
+  background: var(--line);
+  border-radius: 1px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+}
+input[type='range']::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+}

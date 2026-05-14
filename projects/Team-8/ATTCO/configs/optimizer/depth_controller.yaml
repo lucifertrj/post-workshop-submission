@@ -1,0 +1,5 @@
+# Depth controller optimizer
+type: depth_controller
+max_depth: 10
+confidence_threshold: 0.85
+risk_tolerance: 0.5

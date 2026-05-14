@@ -1,16 +1,47 @@
+# Secrets & credentials
 .env
+*.env.*
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+
+# Type checkers & linters
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
+
+# Runtime artifacts & telemetry
 artifacts/
+outputs/
+multirun/
+wandb/
 *.duckdb
 *.parquet
+*.jsonl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build artifacts
 dist/
 build/
 *.egg-info/
+
+# Hydra / config outputs
 .hydra/
-outputs/
-multirun/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large lock files (optional — comment out if you want to track)
+uv.lock

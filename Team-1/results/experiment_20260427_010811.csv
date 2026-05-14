@@ -1,0 +1,5 @@
+iteration,ex_accuracy,simple_acc,moderate_acc,challenging_acc,playbook_entries,playbook_enabled
+5,0.2,0.3333333333333333,0.0,0.0,0,False
+10,0.4,0.5,0.0,0.0,0,False
+5,0.2,0.3333333333333333,0.0,0.0,3,True
+10,0.2,0.25,0.0,0.0,7,True

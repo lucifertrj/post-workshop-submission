@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:#f4f6f9; --bg2:#ffffff; --bg3:#eef1f6; --bg4:#e4e8f0;
+  --bd:#dde2ed; --bd2:#c8d0e0;
+  --t:#0d1424; --t2:#4a5568; --t3:#8896ac;
+  --ac:#1a6ef5; --ac2:#0f52c4;
+  --gr:#0d9e82; --grb:#e0f5f0;
+  --am:#d97706; --amb:#fef3e0;
+  --re:#dc2626; --reb:#fde8e8;
+  --bl:#2563eb; --blb:#e8f0fe;
+  --pu:#7c3aed; --pub:#f0ebfe;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'DM Sans',sans-serif;
+  --disp:'Fraunces',serif;
+  --shadow:0 1px 3px rgba(13,20,36,.08);
+  --radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--t);line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer;border:none;background:none}
+a{text-decoration:none;color:inherit}
+
+.app-shell{display:flex;min-height:100vh}
+.sidebar{width:240px;background:var(--bg2);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:24px 16px}
+.sidebar-logo{font-family:var(--disp);font-size:22px;font-weight:600;margin-bottom:32px;padding:0 12px;color:var(--t)}
+.nav-item{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;margin:4px 0;border-radius:var(--radius);color:var(--t2);font-weight:500;transition:all .15s;border-left:3px solid transparent}
+.nav-item:hover{background:var(--bg3);color:var(--t)}
+.nav-item.active{background:rgba(26,110,245,.09);color:var(--ac2);border-left-color:var(--ac)}
+.badge{background:var(--ac);color:#fff;font-size:11px;font-weight:600;padding:2px 6px;border-radius:99px}
+.main-content{flex:1;padding:24px 32px;background:var(--bg)}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--bd)}
+.topbar h2{font-family:var(--disp);font-weight:600;font-size:24px;color:var(--t)}
+.page{min-height:calc(100vh - 100px)}
+.t{color:var(--t)}.t2{color:var(--t2)}.t3{color:var(--t3)}
+
