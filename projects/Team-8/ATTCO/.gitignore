@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+artifacts/
+*.duckdb
+*.parquet
+dist/
+build/
+*.egg-info/
+.hydra/
+outputs/
+multirun/

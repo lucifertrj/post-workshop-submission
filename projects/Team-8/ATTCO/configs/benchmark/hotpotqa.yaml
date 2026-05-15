@@ -1,0 +1,5 @@
+# HotpotQA benchmark config
+name: hotpotqa
+split: validation
+max_questions: 500
+concurrency: 4

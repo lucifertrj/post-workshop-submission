@@ -1,0 +1,6 @@
+# LangSmith trace backend
+backend: langsmith
+project: attco
+enable_feedback: true
+mask_pii: false
+vel: DEBUG
